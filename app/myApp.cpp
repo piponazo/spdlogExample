@@ -19,14 +19,16 @@ int main()
   auto logger = myLib::setup_logger(sinks);
 
   spdlog::set_level(spdlog::level::level_enum::debug); // No effect for the library.
-  myLib::test("message 1"); // No logging
+  myLib::test("message lib 1"); // No logging
 
-  spdlog::register_logger(logger);
+  //spdlog::register_logger(logger);
 
   // Now this will also affect the library logger
   spdlog::set_level(spdlog::level::level_enum::debug);
 
-  myLib::test("message 2"); // Hurray !
+  myLib::test("message lib 2"); // Hurray !
+
+  SPDLOG_INFO("app 1");
 
   spdlog::shutdown();
 

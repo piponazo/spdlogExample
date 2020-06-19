@@ -1,6 +1,6 @@
 add_library(myLib
-  src/MyLib.cpp
-  include/myLib/MyLib.h
+  src/myLib.cpp
+  include/myLib/myLib.h
 )
 
 generate_export_header(myLib
