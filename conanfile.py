@@ -6,7 +6,8 @@ class SpdlogExampleDeps(ConanFile):
     generators = 'cmake'
 
     def configure(self):
-        self.options['spdlog'].shared = True
+        self.options['spdlog'].shared = False
+        self.options['spdlog'].header_only = True
 
     def requirements(self):
         self.requires('spdlog/1.6.1')

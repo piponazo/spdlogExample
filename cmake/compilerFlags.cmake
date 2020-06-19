@@ -1,6 +1,7 @@
 if (UNIX)
   add_compile_options(-Werror)                                            # Treat warnings as errors
-  add_compile_options(-Wall -Wextra -Wshadow)                             # Recommended warnings flags
+  add_compile_options(-Wall -Wextra)                             # Recommended warnings flags
+  #add_compile_options(-Wshadow)                             # Recommended warnings flags
   add_compile_options(-Wcast-align)
   add_compile_options(-Wsign-conversion)
   add_compile_options(-Wunreachable-code)
