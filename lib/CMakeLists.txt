@@ -1,14 +1,13 @@
 add_library(myLib
-  src/MyLib.cpp
-  include/myLib/MyLib.h
+  src/myLib.cpp
+  include/myLib/myLib.h
 )
 
 generate_export_header(myLib
   EXPORT_FILE_NAME ${PROJECT_BINARY_DIR}/myLib_export.h
 )
 
-target_link_libraries(myLib PRIVATE CONAN_PKG::spdlog)
-#target_compile_definitions(myLib PRIVATE SPDLOG_ACTIVE_LEVEL=0)
+target_link_libraries(myLib PRIVATE spdlog::spdlog)
 
 target_compile_features(myLib PRIVATE cxx_std_11)
 
