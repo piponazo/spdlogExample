@@ -30,5 +30,13 @@ namespace myLib
     }
   }
 
+  void testTrace(std::string message)
+  {
+    auto logger = spdlog::get(logger_name);
+    if (logger) {
+      logger->trace("{}::{}", __FUNCTION__, message);
+    }
+  }
+
 
 }  // namespace myLib

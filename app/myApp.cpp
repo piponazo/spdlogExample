@@ -21,14 +21,15 @@ int main()
   spdlog::set_level(spdlog::level::level_enum::debug); // No effect for the library.
   myLib::test("message lib 1"); // No logging
 
-  //spdlog::register_logger(logger);
-
   // Now this will also affect the library logger
-  spdlog::set_level(spdlog::level::level_enum::debug);
+  spdlog::set_level(spdlog::level::level_enum::trace);
 
-  myLib::test("message lib 2"); // Hurray !
+  myLib::test("message lib 2");
+  myLib::testTrace("message lib 3");
 
   SPDLOG_INFO("app 1");
+  SPDLOG_DEBUG("app 2");
+  SPDLOG_TRACE("app 3");
 
   spdlog::shutdown();
 
